@@ -56,3 +56,23 @@ class _HomePageState extends State<HomeContent> {
 
 }
 
+//加载网络图片
+class ImageDemo01 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //Image.network("https://tva1.sinaimg.cn/large/006y8mN6gy1g72j6nk1d4j30u00k0n0j.jpg")
+    return Image(
+      image: NetworkImage(
+          "https://tva1.sinaimg.cn/large/006y8mN6gy1g72j6nk1d4j30u00k0n0j.jpg"),
+      width: 300,
+      height: 200,
+      fit: BoxFit.fitWidth,
+//      alignment: Alignment.bottomRight,
+      alignment: Alignment(0, 2),
+      // -1 到 1
+      color: Colors.cyan,
+      //颜色混入
+      colorBlendMode: BlendMode.colorDodge,
+    );
+  }
+}
