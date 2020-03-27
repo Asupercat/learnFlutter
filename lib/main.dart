@@ -41,17 +41,11 @@ class HomeContent extends StatefulWidget {
 
 //内部有Widget属性 指向⬆️
 class _HomePageState extends State<HomeContent> {
-  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset("assets/images/WechatIMG13276.jpeg");
-//    return Image(
-//      //1.在Flutter项目中创建文件夹,存储图片
-//      //2.在pubspec.yaml进行配置
-//      //3.使用图片
-//        image: AssetImage("assets/images/WechatIMG13276.jpeg")
-//    );
+    return Text("data");
+    
   }
 
 }

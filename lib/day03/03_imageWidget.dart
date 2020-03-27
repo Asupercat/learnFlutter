@@ -45,6 +45,19 @@ class _HomePageState extends State<HomeContent> {
 
   @override
   Widget build(BuildContext context) {
+    //占位图效果
+    return FadeInImage(
+        fadeInDuration: Duration(seconds: 3),
+        placeholder: AssetImage("assets/images/WechatIMG13276.jpeg"),
+        //内存缓存 1000张 100M
+        image: NetworkImage("https://tva1.sinaimg.cn/large/006y8mN6gy1g72j6nk1d4j30u00k0n0j.jpg"));
+  }
+
+}
+
+class ImageDemo02 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Image.asset("assets/images/WechatIMG13276.jpeg");
 //    return Image(
 //      //1.在Flutter项目中创建文件夹,存储图片
@@ -53,7 +66,6 @@ class _HomePageState extends State<HomeContent> {
 //        image: AssetImage("assets/images/WechatIMG13276.jpeg")
 //    );
   }
-
 }
 
 //加载网络图片
