@@ -7,6 +7,7 @@ void main() => runApp(MYApp());
 class MYApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     // TODO: implement build
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -48,28 +49,27 @@ class _HomePageState extends State<HomeContent> {
         title: Text("滚动监听"),
       ),
       body: NotificationListener(
-        onNotification: (ScrollNotification notification){
-          if (notification is ScrollUpdateNotification){
+        onNotification: (ScrollNotification notification) {
+          if (notification is ScrollUpdateNotification) {
             print("滚动监听..${notification.metrics.pixels}");
-          }else if (notification is ScrollStartNotification) {
+          } else if (notification is ScrollStartNotification) {
             print("滚动开始 ");
-          }else if (notification is ScrollEndNotification) {
+          } else if (notification is ScrollEndNotification) {
             print("滚动结束");
           }
-
-            return true;
+          return true;
         },
         child: ListView.builder(
             controller: _controller,
             itemCount: 100,
-            itemBuilder: (BuildContext ctn , int index){
+            itemBuilder: (BuildContext ctn, int index) {
               return ListTile(
                 leading: Icon(Icons.face),
                 title: Text("$index"),
               );
             }),
       ),
-      floatingActionButton: _isShowFloatingButton ?  FloatingActionButton(
+      floatingActionButton: _isShowFloatingButton ? FloatingActionButton(
         child: Icon(Icons.arrow_upward),
         onPressed: () {
           _controller.animateTo(
