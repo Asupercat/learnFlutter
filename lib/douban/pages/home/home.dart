@@ -1,3 +1,5 @@
+
+import 'package:demo/douban/pages/home/home_content.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,9 +9,11 @@ class DBHomePage extends StatefulWidget {
 }
 
 class _DBHomePageState extends State<DBHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text("首页"),),
-      body: Text("home"),);
+      body: DBHomeContent()
+    );
   }
 }
