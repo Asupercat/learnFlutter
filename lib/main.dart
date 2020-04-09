@@ -22,13 +22,7 @@ class HomeContent extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomeContent> {
-  /** 两种方式可以监听
-   * controller:
-   * 1.可以设置默认offset
-   * 2.可以监听滚动,也可以监听滚动的位置
-   * NotificationListener:
-   * 1.开始滚动和结束滚动
-   */
+
   ScrollController _controller = ScrollController(initialScrollOffset: 0); //偏移
   bool _isShowFloatingButton = false;
   @override
@@ -36,7 +30,6 @@ class _HomePageState extends State<HomeContent> {
     // TODO: implement initState
     super.initState();
     _controller.addListener((){
-//      print("监听滚动${_controller.offset}");
       setState(() {
         _isShowFloatingButton = (_controller.offset >= 500);
       });

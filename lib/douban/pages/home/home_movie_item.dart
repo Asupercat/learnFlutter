@@ -53,9 +53,17 @@ class _DBHomeMovieItemState extends State<DBHomeMovieItem> {
         children: <Widget>[
           buildContentImage(),
           SizedBox(width: 8),
-          buildContentInfo(),
-          buildContentDashLine(),
-          buildContentLike()
+          Expanded(child:
+          IntrinsicHeight(
+            child: Row(
+              children: <Widget>[
+                buildContentInfo(),
+                buildContentDashLine(),
+                buildContentLike(),
+              ],
+            ),
+          ),
+          )
         ]);
   }
 
